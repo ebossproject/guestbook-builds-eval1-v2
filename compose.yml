@@ -1,0 +1,93 @@
+# Copyright (c) 2026 Cromulence
+services:
+  guestbook:
+    build:
+      context: .
+      dockerfile: dockerfiles/guestbook.dockerfile
+      args:
+        VARIANT: ${VARIANT}
+    ports:
+      - "8080:8080"
+    networks:
+      - guestbook-network
+    
+  poller:
+    build: poller
+    environment:
+      HOST: guestbook
+      PORT: 8080
+    networks:
+      - guestbook-network
+
+  pov_abort:
+    build:
+      context: pov/pov_abort
+    container_name: pov_abort
+    volumes:
+      - .:/mnt
+    networks:
+      - guestbook-network
+    environment:
+      HOST: guestbook
+      PORT: 8080
+    profiles:
+      - dont_start_by_default
+
+  pov_filter_column:
+    build: pov/pov_filter_column
+    container_name: pov_filter_column
+    networks:
+      - guestbook-network
+    environment:
+      HOST: guestbook
+      PORT: 8080
+    profiles:
+      - dont_start_by_default
+
+  pov_info_env:
+    build: pov/pov_info_env
+    container_name: pov_info_env
+    networks:
+      - guestbook-network
+    environment:
+      HOST: guestbook
+      PORT: 8080
+    profiles:
+      - dont_start_by_default
+
+  pov_many_query_params:
+    build: pov/pov_many_query_params
+    container_name: pov_many_query_params
+    networks:
+      - guestbook-network
+    environment:
+      HOST: guestbook
+      PORT: 8080
+    profiles:
+      - dont_start_by_default
+
+  pov_sort_column:
+    build: pov/pov_sort_column
+    container_name: pov_sort_column
+    networks:
+      - guestbook-network
+    environment:
+      HOST: guestbook
+      PORT: 8080
+    profiles:
+      - dont_start_by_default
+
+  pov_sort_direction:
+    build: pov/pov_sort_direction
+    container_name: pov_sort_direction
+    networks:
+      - guestbook-network
+    environment:
+      HOST: guestbook
+      PORT: 8080
+    profiles:
+      - dont_start_by_default
+
+networks:
+  guestbook-network:
+

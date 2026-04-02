@@ -1,0 +1,11 @@
+This software has been intentionally modified to include security vulnerabilities and is provided solely for the purposes of security research, testing, education, and evaluation. The vulnerabilities present in this software are deliberate by design and may include, but are not limited to, memory safety violations, authentication or authorization bypasses, input validation failures, logic errors, and unsafe default configurations. These weaknesses may permit unauthorized access, data corruption, data exfiltration, denial of service, or full system compromise.
+
+This software must not be used in production environments, operational systems, safety-critical systems, or any environment that contains sensitive, regulated, or real-world data. It is not intended for use in live deployments or systems that provide availability, confidentiality, or integrity guarantees.
+
+This software must not be exposed to the public Internet or connected to external or untrusted networks. It is intended to be executed only in isolated, controlled, and sandboxed environments, such as air-gapped systems, isolated virtual machines, or closed test networks. Failure to properly isolate this software may result in unintended system compromise or data loss.
+
+This software is provided “AS IS”, without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, security, or reliability. There is no guarantee that the software will function correctly or safely in any environment.
+
+In no event shall the authors, copyright holders, or contributors be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or misuse of the software. This limitation of liability includes, without limitation, system compromise, data loss or corruption, financial loss, regulatory or compliance violations, and service interruption.
+
+By using this software, you acknowledge that you understand it is intentionally vulnerable, accept all risks associated with its use, and assume full responsibility for ensuring safe, lawful, and properly isolated deployment. If you do not understand or accept these conditions, you must not use this software.

@@ -1,0 +1,10 @@
+{
+    "name": "guestbook",
+    "version": "0.14.5",
+    "dependencies": [
+      "sqlite3",
+      "libsodium",
+      "crow"
+    ]
+  }
+  

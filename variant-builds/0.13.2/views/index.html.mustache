@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>index</title>
+    </head>
+    <body>
+        <h1>welcome to my site</h1>
+        <h2>guestbook</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <a href="/filter?order_by[name]=asc">name</a>
+                    </th>
+                    <th>
+                        <a href="/filter?order_by[email]=asc">email</a>
+                    </th>
+                    <th>
+                        <a href="/filter?order_by[message]=asc">message</a>
+                    </th>
+                    <th>
+                        <a href="/filter?order_by[created_at]=asc">posted at</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#guestbook}}
+                <tr>
+                    <td>
+                        {{name}}
+                        <a class="only" href="/filter?where[name]={{name}}">only</a>
+                    </td>
+                    <td>
+                        {{email}}
+                        <a class="only" href="/filter?where[email]={{email}}">only</a>
+                    </td>
+                    <td>
+                        {{message}}
+                        <a class="only" href="/filter?where[message]={{message}}">only</a>
+                    </td>
+                    <td>
+                        {{created_at}}
+                        <a class="only" href="/filter?where[created_at]={{created_at}}">only</a>
+                    </td>
+                </tr>
+                {{/guestbook}}
+        </table>
+
+        <h3>sign the guestbook</h3>
+        <form action="/sign" method="post">
+            <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+
+            <label>
+                Name:
+                <input type="text" name="name" placeholder="name">
+            </label>
+                
+            <label>
+                Email:
+                <input type="text" name="email" placeholder="email">
+            </label>   
+
+            <label>
+                Message: <br />
+                <textarea name="message"></textarea>
+            </label>
+            <input type="submit" value="sign">
+        </form>
+    </body>
+</html>
+

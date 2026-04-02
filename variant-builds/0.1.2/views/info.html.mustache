@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>info</title>
+    </head>
+    <body>
+        <h1>info</h1>
+        <h2>process info</h2>
+        <dl>
+            <dd>pid</dd>
+            <dt>{{pid}}</dt>
+            <dd>parent pid</dd>
+            <dt>{{ppid}}</dt>
+            <dd>process title</dd>
+            <dt>{{process_title}}</dt>
+            <dd>process start time</dd>
+            <dt>{{process_start_time}}</dt>
+            <dd>process uptime</dd>
+            <dt>{{process_uptime}}</dt>
+            <dd>process memory usage</dd>
+            <dt>{{process_memory_usage}}</dt>
+        </dl>
+
+        <h2>environment</h2>
+        {{__dump_env__}}
+    </body>
+</html>

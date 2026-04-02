@@ -1,0 +1,34 @@
+{
+    "vulnerabilities": [
+        {
+            "cve-id": "CVE-guestbook-001",
+            "cve-description": "sqlite3 version 3.47.99 allows an invalid SQL query to trigger a Denial of Service vulnerability in sqlite.c. This vulnerability can be triggered by a SQL command that calls the abort function, including as the payload to a SQL injection.",
+            "package-name": "sqlite3",
+            "package-version": "3.47.99",
+            "cwe-id": "89",
+            "cwe-name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+            "affected-function": "abortFunc",
+            "affected-file": "sqlite3.c"
+        },
+        {
+            "cve-id": "CVE-crow-002",
+            "cve-description": "crow version 0.0.1 through 0.1.0 (synthetic)  supports a `crow-env` mustache tag in templates that can expose sensitive information from environment variables in `mustache.h`. This vulnerability can be triggered by a template that contains a `crow-env` tag, even if the context of the template defines content for that tag.",
+            "package-name": "crow",
+            "package-version": ">=0.0.1|<=0.1.0",
+            "cwe-id": "489",
+            "cwe-name": "Active Debug Code",
+            "affected-function": "render_internal",
+            "affected-file": "mustache.h"
+        },
+        {
+            "cve-id": "CVE-crow-003",
+            "cve-description": "crow version 0.0.1 and 0.2.0 (synthetic) does not properly handle query parameters. It will continue to process query parameters, overflowing the vector of results.",
+            "package-name": "crow",
+            "package-version": "0.0.1|0.2.0",
+            "cwe-id": "787",
+            "cwe-name": "Out-of-bounds Write",
+            "affected-function": "qs_parse",
+            "affected-file": "query_string.h"
+        }
+    ]
+}

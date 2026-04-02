@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>filter</title>
+    </head>
+    <body>
+        <h1>filtered guestbook entries</h1>
+        <h2>filter</h2>
+        <pre>{{sql}}</pre>
+        <h2>entries</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <a href="/filter?order_by[name]=asc">name</a>
+                    </th>
+                    <th>
+                        <a href="/filter?order_by[email]=asc">email</a>
+                    </th>
+                    <th>
+                        <a href="/filter?order_by[message]=asc">message</a>
+                    </th>
+                    <th>
+                        <a href="/filter?order_by[created_at]=asc">posted at</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#guestbook}}
+                <tr>
+                    <td>
+                        {{name}}
+                        <a class="only" href="/filter?where[name]={{name}}">only</a>
+                    </td>
+                    <td>
+                        {{email}}
+                        <a class="only" href="/filter?where[email]={{email}}">only</a>
+                    </td>
+                    <td>
+                        {{message}}
+                        <a class="only" href="/filter?where[message]={{message}}">only</a>
+                    </td>
+                    <td>
+                        {{created_at}}
+                        <a class="only" href="/filter?where[created_at]={{created_at}}">only</a>
+                    </td>
+                </tr>
+                {{/guestbook}}
+        </table>
+    </body>
+</html>
